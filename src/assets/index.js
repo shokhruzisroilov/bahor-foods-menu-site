@@ -1,3 +1,3 @@
-import searchIcon from './icons/search-icon.png'
+import searchIcon from './svg/search-icon.svg'
 
 export {searchIcon}
