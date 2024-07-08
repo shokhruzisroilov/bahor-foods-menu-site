@@ -1,3 +1,5 @@
 export { default as Home } from './Home'
 export { default as Drinks } from './Drinks'
 export { default as Foods } from './Foods'
+export { default as Salads } from './Salads'
+export { default as Shashliks } from './Shashliks'

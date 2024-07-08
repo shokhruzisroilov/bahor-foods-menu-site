@@ -1,5 +1,5 @@
-import React from 'react'
 import { ProductItem } from '../components'
+import { allFoodsData } from '../utils/allFoodsData'
 
 const Foods = () => {
 	return (
@@ -11,10 +11,19 @@ const Foods = () => {
 				Taomlar
 			</h2>
 			<div className='py-5 grid grid-cols-2 gap-5 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5'>
-				<ProductItem />
-				<ProductItem />
-				<ProductItem />
-				<ProductItem />
+				{allFoodsData &&
+					allFoodsData.map(item => {
+						return (
+							item.filter === 'foods' && (
+								<ProductItem
+									key={item.id}
+									name={item.name}
+									img={item.img}
+									price={item.price}
+								/>
+							)
+						)
+					})}
 			</div>
 		</div>
 	)
