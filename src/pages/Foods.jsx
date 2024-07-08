@@ -5,7 +5,7 @@ const Foods = () => {
 	return (
 		<div className='px-4'>
 			<h2
-				className='font-normal text-[14px] text-left tracking-[0%]'
+				className='font-normal text-[14px] tracking-[0%] text-center border-b-[1px] border-[#FED718]'
 				id='foods'
 			>
 				Taomlar
