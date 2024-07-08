@@ -2,7 +2,7 @@ import React from 'react'
 
 const ProductItem = () => {
 	return (
-		<div className='p-2 border-[1px] border-solid border-[#FED718]'>
+		<div className='px-2 py-3 border-[1px] border-solid border-[#FED718] cursor-pointer hover:shadow-lg'>
 			<img
 				src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSMAo0pc8gpyeMi4g7-GDl49XMD5_On9UJWSA&s'
 				alt='product image'
