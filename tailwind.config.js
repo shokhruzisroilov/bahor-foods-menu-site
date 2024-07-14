@@ -10,6 +10,13 @@ export default {
 				xl: '1280px',
 				'2xl': '1536px',
 			},
+			fontFamily: {
+				merriweather: ['Merriweather', 'serif'],
+				cormorant: ['Cormorant', 'serif'],
+			},
+			boxShadow: {
+				custom: '0px 9px 20px rgba(47, 71, 123, 0.09)',
+			},
 		},
 	},
 	plugins: [],
