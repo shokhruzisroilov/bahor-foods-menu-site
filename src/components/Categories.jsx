@@ -15,7 +15,7 @@ const Categories = ({ activeCategory }) => {
 		prevArrow: <PrevArrow />,
 		responsive: [
 			{
-				breakpoint: 1024,
+				breakpoint: 1920,
 				settings: {
 					slidesToShow: categories.length,
 					slidesToScroll: 1,
@@ -57,8 +57,8 @@ const Categories = ({ activeCategory }) => {
 							to={`/#${category.id}`}
 							className={`block ${
 								activeCategory === category.id
-									? 'py-3 px-2 text-center bg-[#deab5d] rounded-[8px] text-base text-black font-merriweather'
-									: 'py-3 px-2 text-center bg-[#deab5d26] rounded-[8px] text-base text-black font-merriweather'
+									? 'py-3 px-1 text-center bg-[#deab5d] rounded-[8px] text-base text-black font-merriweather'
+									: 'py-3 px-1 text-center bg-[#deab5d26] rounded-[8px] text-base text-black font-merriweather'
 							}`}
 						>
 							{category.name}

@@ -1,9 +1,47 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { categories } from '../utils/categories'
-import { foodsData } from '../utils/foodsData'
 import ProductItem from '../components/ProductItem'
+import FoodsService from '../services/foodsServices'
 
 const Home = () => {
+	const [foodsData, setFoodsData] = useState([])
+	const [loading, setLoading] = useState(true)
+	const [error, setError] = useState(null)
+
+	const getFoods = async () => {
+		try {
+			const data = await FoodsService.getFoods()
+			if (Array.isArray(data)) {
+				setFoodsData(data)
+			} else {
+				console.error('Data is not in expected format:', data)
+			}
+		} catch (err) {
+			setError(err.message || 'Failed to fetch foods')
+		} finally {
+			setLoading(false)
+		}
+	}
+	useEffect(() => {
+		getFoods()
+	}, [])
+
+	if (loading) {
+		return (
+			<div className='min-h-screen flex items-center justify-center'>
+				Loading...
+			</div>
+		)
+	}
+
+	if (error) {
+		return (
+			<div className='min-h-screen flex items-center justify-center'>
+				Error: {error}
+			</div>
+		)
+	}
+
 	return (
 		<div className='py-10'>
 			{categories.map(category => (
@@ -16,7 +54,7 @@ const Home = () => {
 							.filter(food => food.category === category.id)
 							.map(filteredFood => (
 								<ProductItem
-									key={filteredFood.id}
+									key={filteredFood._id}
 									filteredFood={filteredFood}
 								/>
 							))}

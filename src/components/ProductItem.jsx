@@ -6,7 +6,7 @@ const ProductItem = ({ filteredFood }) => {
 			<img
 				src={filteredFood.img}
 				alt={filteredFood.name}
-				className='w-full min-h-[150px] object-cover'
+				className='w-full h-[150px] object-cover'
 				onError={e => {
 					e.target.src = 'https://via.placeholder.com/150'
 				}}

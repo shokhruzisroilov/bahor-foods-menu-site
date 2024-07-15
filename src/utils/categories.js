@@ -1,7 +1,8 @@
 export const categories = [
-	{ id: 'foods', name: 'Taomlar' },
-	{ id: 'drinks', name: 'Ichimliklar' },
-	{ id: 'salads', name: 'Saladlar' },
-	{ id: 'shasha', name: 'Shashliklar' },
-	{ id: 'cocktail', name: 'Koktel' },
+	{ id: 'food', name: 'Ovqat' },
+	{ id: 'salad', name: 'Salat' },
+	{ id: 'drink', name: 'Ichimlik' },
+	{ id: 'shasha', name: 'Shashlik' },
+	{ id: 'koktel', name: 'Koktel' },
+	{ id: 'cream', name: 'Muzqaymoq' },
 ]
