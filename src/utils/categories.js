@@ -3,4 +3,5 @@ export const categories = [
 	{ id: 'drinks', name: 'Ichimliklar' },
 	{ id: 'salads', name: 'Saladlar' },
 	{ id: 'shasha', name: 'Shashliklar' },
+	{ id: 'cocktail', name: 'Koktel' },
 ]

@@ -1,9 +1,9 @@
+import Home from './pages/Home'
+import Categories from './components/Categories'
+import Footer from './components/Footer'
 import React, { useState, useEffect } from 'react'
 import { Routes, Route, useLocation } from 'react-router-dom'
 import { categories } from './utils/categories'
-import { foodsData } from './utils/foodsData'
-import Categories from './components/Categories'
-import Home from './pages/Home'
 
 const App = () => {
 	const [activeCategory, setActiveCategory] = useState(categories[0].id)
@@ -53,6 +53,7 @@ const App = () => {
 					<Route path='/' element={<Home />} />
 				</Routes>
 			</div>
+			<Footer />
 		</div>
 	)
 }

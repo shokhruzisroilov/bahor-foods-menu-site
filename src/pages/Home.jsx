@@ -1,6 +1,7 @@
 import React from 'react'
 import { categories } from '../utils/categories'
 import { foodsData } from '../utils/foodsData'
+import ProductItem from '../components/ProductItem'
 
 const Home = () => {
 	return (
@@ -14,27 +15,10 @@ const Home = () => {
 						{foodsData
 							.filter(food => food.category === category.id)
 							.map(filteredFood => (
-								<div
+								<ProductItem
 									key={filteredFood.id}
-									className='food-item bg-white shadow-xl rounded-lg overflow-hidden w-full max-w-sm mx-auto mb-6 transition-transform transform hover:scale-105 border-[1px] border-[#deab5d26] hover:border-[1px] hover:border-[#deab5d]'
-								>
-									<img
-										src={filteredFood.img}
-										alt={filteredFood.name}
-										className='w-full min-h-[150px] object-cover'
-										onError={e => {
-											e.target.src = 'https://via.placeholder.com/150'
-										}}
-									/>
-									<div className='p-6'>
-										<h2 className='text-lg font-bold font-merriweather text-gray-800 mb-2'>
-											{filteredFood.name}
-										</h2>
-										<p className='text-md font-semibold font-merriweather text-gray-600'>
-											{filteredFood.price}
-										</p>
-									</div>
-								</div>
+									filteredFood={filteredFood}
+								/>
 							))}
 					</div>
 				</div>
