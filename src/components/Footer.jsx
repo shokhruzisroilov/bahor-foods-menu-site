@@ -6,13 +6,13 @@ const Footer = () => {
 		<footer className='bg-white text-black py-8'>
 			<div className='container mx-auto text-center'>
 				<h1 className='text-2xl font-bold mb-4 font-merriweather'>
-					Bahor restoranni
+					Баҳор ресторанни
 				</h1>
 
 				<p className='text-[14px]'>
-					Manzil: 123 Restoran Ko'chasi, Karshi, O'zbekiston
+					Манзил: 123 Ресторан Кўчаси, Карши, Ўзбекистон
 				</p>
-				<p className='text-[14px]'>Telefon: +998 (90) 123-45-67</p>
+				<p className='text-[14px]'>Телефон: +998 (90) 123-45-67</p>
 			</div>
 		</footer>
 	)
