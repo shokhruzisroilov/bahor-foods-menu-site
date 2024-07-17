@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import Slider from 'react-slick'
 import { categories } from '../utils/categories'
 
-const Categories = ({ activeCategory }) => {
+const Categories = ({ activeCategory, onClick }) => {
 	const settings = {
 		dots: false,
 		infinite: false,
@@ -55,6 +55,7 @@ const Categories = ({ activeCategory }) => {
 					<div key={category.id} className='px-2'>
 						<Link
 							to={`/#${category.id}`}
+							onClick={() => onClick(category.id)}
 							className={`block ${
 								activeCategory === category.id
 									? 'py-3 px-1 text-center bg-[#deab5d] rounded-[8px] text-base text-black font-merriweather'

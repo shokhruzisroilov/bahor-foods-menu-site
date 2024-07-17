@@ -18,7 +18,6 @@ const App = () => {
 		for (let i = 0; i < categoryElements.length; i++) {
 			const element = categoryElements[i]
 			if (element) {
-				// Check if the element is not null
 				const rect = element.getBoundingClientRect()
 				const elementTop = rect.top + window.scrollY
 				const elementBottom = elementTop + rect.height
@@ -48,9 +47,18 @@ const App = () => {
 		}
 	}, [location])
 
+	const handleCategoryClick = categoryId => {
+		setActiveCategory(categoryId)
+		document.getElementById(categoryId)?.scrollIntoView({ behavior: 'smooth' })
+	}
+
 	return (
 		<div>
-			<Categories categories={categories} activeCategory={activeCategory} />
+			<Categories
+				categories={categories}
+				activeCategory={activeCategory}
+				onClick={handleCategoryClick}
+			/>
 			<div>
 				<Routes>
 					<Route path='/' element={<Home />} />
