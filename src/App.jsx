@@ -17,13 +17,16 @@ const App = () => {
 
 		for (let i = 0; i < categoryElements.length; i++) {
 			const element = categoryElements[i]
-			const rect = element.getBoundingClientRect()
-			const elementTop = rect.top + window.scrollY
-			const elementBottom = elementTop + rect.height
+			if (element) {
+				// Check if the element is not null
+				const rect = element.getBoundingClientRect()
+				const elementTop = rect.top + window.scrollY
+				const elementBottom = elementTop + rect.height
 
-			if (scrollPosition >= elementTop && scrollPosition < elementBottom) {
-				setActiveCategory(categories[i].id)
-				break
+				if (scrollPosition >= elementTop && scrollPosition < elementBottom) {
+					setActiveCategory(categories[i].id)
+					break
+				}
 			}
 		}
 	}

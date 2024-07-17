@@ -11,13 +11,28 @@ const ProductItem = ({ filteredFood }) => {
 					e.target.src = 'https://via.placeholder.com/150'
 				}}
 			/>
-			<div className='p-6'>
-				<h2 className='text-lg font-bold font-merriweather text-gray-800 mb-2'>
+			<div className='max-sx:p-4 p-6'>
+				<h2 className='text-lg max-sx:text-base font-bold font-merriweather text-gray-800 mb-2'>
 					{filteredFood.name}
 				</h2>
 				<p className='text-md font-semibold font-merriweather text-gray-600'>
 					{filteredFood.price}
 				</p>
+				{filteredFood.category === 'salad' && (
+					<p className='text-xs font-semibold font-merriweather text-gray-600 mt-2'>
+						Тайёр бўлиши: 15 мин
+					</p>
+				)}
+				{filteredFood.category === 'dish' && (
+					<p className='text-xs font-semibold font-merriweather text-gray-600 mt-2'>
+						Тайёр бўлиши: 30 мин
+					</p>
+				)}
+				{filteredFood.category === 'food' && (
+					<p className='text-xs font-semibold font-merriweather text-gray-600 mt-2'>
+						Тайёр бўлиши: 30 мин
+					</p>
+				)}
 			</div>
 		</div>
 	)
