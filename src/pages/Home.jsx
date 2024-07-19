@@ -70,7 +70,7 @@ const Home = () => {
 							</div>
 						))
 					) : (
-						<div className='foods-grid grid grid-cols-2 gap-5 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5'>
+						<div className='foods-grid grid grid-cols-2 gap-5 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 px-4'>
 							{foodsData
 								.filter(food => food.category === category.id)
 								.map(filteredFood => (
