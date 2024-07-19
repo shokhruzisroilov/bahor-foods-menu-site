@@ -23,6 +23,7 @@ const Home = () => {
 			setLoading(false)
 		}
 	}
+
 	useEffect(() => {
 		getFoods()
 	}, [])
@@ -46,16 +47,40 @@ const Home = () => {
 					<h2 className='pb-8 px-4 text-[#2b191] font-cormorant font-[800] text-2xl'>
 						{category.name}
 					</h2>
-					<div className='foods-grid grid grid-cols-2 gap-5 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 px-4'>
-						{foodsData
-							.filter(food => food.category === category.id)
-							.map(filteredFood => (
-								<ProductItem
-									key={filteredFood._id}
-									filteredFood={filteredFood}
-								/>
-							))}
-					</div>
+					{category.subcategories ? (
+						category.subcategories.map(sub => (
+							<div key={sub.id} className='pb-8 px-4'>
+								<h3 className='pb-4 text-[#2b191] font-cormorant font-[700] text-xl'>
+									{sub.name}
+								</h3>
+								<div className='foods-grid grid grid-cols-2 gap-5 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5'>
+									{foodsData
+										.filter(
+											food =>
+												food.category === category.id &&
+												food.subcategory === sub.id
+										)
+										.map(filteredFood => (
+											<ProductItem
+												key={filteredFood._id}
+												filteredFood={filteredFood}
+											/>
+										))}
+								</div>
+							</div>
+						))
+					) : (
+						<div className='foods-grid grid grid-cols-2 gap-5 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5'>
+							{foodsData
+								.filter(food => food.category === category.id)
+								.map(filteredFood => (
+									<ProductItem
+										key={filteredFood._id}
+										filteredFood={filteredFood}
+									/>
+								))}
+						</div>
+					)}
 				</div>
 			))}
 		</div>
