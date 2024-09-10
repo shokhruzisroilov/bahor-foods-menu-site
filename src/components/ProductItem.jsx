@@ -31,11 +31,11 @@ const ProductItem = ({ filteredFood }) => {
 				<p className='text-md font-semibold font-merriweather text-gray-600'>
 					{filteredFood.price}
 				</p>
-				{getPreparationTime() && (
+				{/* {getPreparationTime() && (
 					<p className='text-xs font-semibold font-merriweather text-gray-600 mt-2'>
 						{getPreparationTime()}
 					</p>
-				)}
+				)} */}
 			</div>
 		</div>
 	)
